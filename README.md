@@ -39,3 +39,11 @@ Semana 1 - [Link](https://drive.google.com/drive/folders/1pHptMbSJWmMmlFD__n_FMW
 [Repo JS](https://github.com/JonaThanPabonP/Taller2_DiplomadoDjango)
 
 [Page JS](https://jonathanpabonp.github.io/Taller2_DiplomadoDjango/)
+
+### Link documento del tercer taller
+
+[Link](https://docs.google.com/document/d/1MmnSDYgtpJitKqsQPwkbwdO2EWfDFWbk_1HocQRm-3k/edit)
+
+[Reto - Repo](https://github.com/JonaThanPabonP/BibliotecaMusical)
+
+[Reto - Page](https://jonathanpabonp.github.io/BibliotecaMusical/)
