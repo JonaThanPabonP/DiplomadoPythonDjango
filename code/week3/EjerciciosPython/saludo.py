@@ -28,7 +28,7 @@ print(f'Segundo apellido {name_splited[-1]}')
 snake = input('Ingrese una palabra en snake_case: ')
 snake_splited = snake.split("_")
 # ["mi","variable"]
-cammel = snake_splited[0]+snake_splited[1].capitalize()
+cammel = snake_splited[0]+"".join(w.capitalize() for w in snake_splited[1:])
 # "mi"+"Variable"
 print(cammel)
 # miVariable
