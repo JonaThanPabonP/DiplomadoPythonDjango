@@ -4,7 +4,7 @@
 # Hacer un programa que permita ingresar dichos valores y al final muestre los resultados de quien tiene un mejor promedio de anotaciones
 
 jugadores = []
-mejor_jug = {"nombre":"", "anotaciones":0}
+mejor_jug = {"nombre":"", "promedio":0}
 
 cant_jug = int(input("Ingrese la cantidad de jugadores a registrar: "))
 while cant_jug>0:
@@ -21,7 +21,7 @@ while cant_jug>0:
 
 # print(jugadores)
 for jugador in jugadores:
-    if jugador["anotaciones"] > mejor_jug["anotaciones"]:
-        mejor_jug.update({"nombre":jugador["nombre"], "anotaciones":jugador["anotaciones"]})
+    if (jugador["anotaciones"]/jugador["partidos"]) > mejor_jug["promedio"]:
+        mejor_jug.update({"nombre":jugador["nombre"], "promedio":(jugador["anotaciones"]/jugador["partidos"])})
 
 print(mejor_jug)
