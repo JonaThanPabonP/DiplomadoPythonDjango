@@ -22,13 +22,13 @@ while bandera == True:
     if opc == 1:
         # Registrar jugadores
         cant_jug = int(input("Ingrese la cantidad de jugadores a registrar: "))
-        while cant_jug>0:
+        for i in range(cant_jug):
+            print("")
             jugador = {}
-            cant_jug -= 1
-            nombre = input("Ingrese el nombre del jugador: ")
-            edad = int(input("Ingrese la edad del jugador: "))
-            partidos = int(input("Ingrese el numero de partidos jugados del jugador: "))
-            anotaciones = int(input("Ingrese el total de anotaciones totales del jugador: "))
+            nombre = input(f"Ingrese el nombre del jugador {i}: ")
+            edad = int(input(f"Ingrese la edad del jugador {i}: "))
+            partidos = int(input(f"Ingrese el numero de partidos jugados del jugador {i}: "))
+            anotaciones = int(input(f"Ingrese el total de anotaciones totales del jugador {i}: "))
 
             jugador.update({"nombre":nombre, "edad":edad, "partidos": partidos, "anotaciones": anotaciones}
             )
@@ -43,8 +43,12 @@ while bandera == True:
     
     elif opc == 3:
         # Listar jugadores
-        print(jugador for jugador in jugadores)
+        for jugador in jugadores:
+            print(jugador)
 
     elif opc == 0:
         bandera = False
         print("Saliendo...")
+
+    else:
+        print("Ingrese un valor válido.")
