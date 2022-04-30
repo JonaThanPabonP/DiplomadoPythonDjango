@@ -4,13 +4,13 @@ print(f"La lista tiene {len(lista)} valores.")
 
 par = 0
 for num in lista:
-    if num%2 == 0:
+    if num%2 == 0 and num!=0:
         par += 1
 print(f"La lista tiene {par} números pares")
 
 mult3 = 0
 for num in lista:
-    if num%3 == 0:
+    if num%3 == 0 and num!=0:
         mult3 += 1
 print(f"La lista tiene {mult3} números múltiplos de 3.")
 
