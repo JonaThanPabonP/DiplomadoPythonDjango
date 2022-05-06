@@ -19,3 +19,40 @@ while flag:
         nombre = input("Nombre: ")
         edad = input("Edad: ")
         
+
+
+class Jugador:
+    """
+    this class jugador
+    """
+    def __init__(self, id, name, age) -> None:
+        self.id = id
+        self.name = name
+        self.age = age
+
+
+class Partido:
+    """
+    this class partido
+    """
+    def __init__(self, id, date, location) -> None:
+        self.id = id
+        self.date = date
+        self.location = location
+
+
+class JugadorPartido:
+    """
+    this class jugador en partido
+    """
+    def __init__(self, player, game, points, faults):
+        self.game = game
+        self.player = player
+        self.points = points
+        self.faults = faults
+
+    def anotaciones(self, new_points):
+        self.points += new_points
+
+    def faltas(self, new_faults):
+        self.faults += new_faults
