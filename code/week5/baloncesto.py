@@ -10,7 +10,7 @@ def menu():
 flag = True
 while flag:
     menu()
-    opc = input("Ingrese la opción necesaria: ")
+    opc = int(input("Ingrese la opción necesaria: "))
     
     if opc == 0:
         flag = False
@@ -18,7 +18,16 @@ while flag:
     elif opc == 1:
         nombre = input("Nombre: ")
         edad = input("Edad: ")
+    
+    elif opc == 2:
+        fecha = input("Fecha: ")
+        ubicacion = input("Lugar: ")
         
+    elif opc == 3:
+        id_jugador = input("ID del jugador: ")
+        id_partido = input("ID del partido: ")
+        puntos_partido = input("Puntos partido: ")
+        faltas_partido = input("Faltas partido: ")
 
 
 class Jugador:
@@ -30,6 +39,9 @@ class Jugador:
         self.name = name
         self.age = age
 
+    def get_player_by_id(id):
+        player = None
+        return player
 
 class Partido:
     """
@@ -40,6 +52,9 @@ class Partido:
         self.date = date
         self.location = location
 
+    def get_game_by_id(id):
+        game = None
+        return game
 
 class JugadorPartido:
     """
@@ -56,3 +71,7 @@ class JugadorPartido:
 
     def faltas(self, new_faults):
         self.faults += new_faults
+
+    def get_points_by_game(points):
+        points_by_game = None
+        return points_by_game
