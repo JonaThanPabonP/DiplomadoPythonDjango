@@ -59,7 +59,7 @@ class JugadorPartido:
 
 jugadores = []
 partidos = []
-resultados = []
+infopartidos = []
 
 def inicio():
     flag = True
@@ -92,20 +92,15 @@ def inicio():
             faltas_partido = input("Faltas partido: ")
             jugpart = JugadorPartido(id_jugador, id_partido, puntos_partido, faltas_partido)
             
-            if resultados == []:
-                resultados.append({jugpart.player : [{"partido":jugpart.game, "puntos":jugpart.points, "faltas":jugpart.faults}]})
-            else:
-                for i in resultados:
-                    if jugpart.player == i[jugpart.player]:
-                        print(i, i[jugpart.player])
+            infopartidos.append({"id_jug": jugpart.player, "id_part":jugpart.game, "puntos":jugpart.points, "faltas":jugpart.faults})
 
             
            
         elif opc == 4:
-            if resultados == []:
+            if infopartidos == []:
                 print("No hay registros.")
             else: 
-                for jug in resultados:
+                for jug in infopartidos:
                     print(jug)
 
 

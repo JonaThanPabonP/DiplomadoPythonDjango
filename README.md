@@ -47,3 +47,7 @@ Semana 1 - [Link](https://drive.google.com/drive/folders/1pHptMbSJWmMmlFD__n_FMW
 [Reto - Repo](https://github.com/JonaThanPabonP/BibliotecaMusical)
 
 [Reto - Page](https://jonathanpabonp.github.io/BibliotecaMusical/)
+
+### Sexto Taller
+
+[Link](https://docs.google.com/document/d/1F2qgY1pJRaY0jexAnOxV6Wu0-8tZa7sW/edit)
