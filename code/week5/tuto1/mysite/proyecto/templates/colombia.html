@@ -1,0 +1,65 @@
+{% extends './base.html' %} 
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/page-style.css' %}" />
+{% endblock %} 
+
+{% block title %}
+<title>Festivo en Colombia</title>
+{% endblock %} 
+
+{% block content %}
+<div class="card">
+  <h1>FESTIVO EN COLOMBIA</h1>
+  <h2>NAVIDAD</h2>
+  <img
+    src="https://blog.redbus.co/wp-content/uploads/2017/12/christmas-2948567_1920.jpg"
+    alt="Foto navideña"
+  />
+  <div class="info-colombia">
+    <ul>
+      <li><b>¿Cuándo se celebra?</b></li>
+      <p>La Navidad se celebra el 25 de diciembre.</p>
+      <li><b>¿Por qué existe ese festivo?</b></li>
+      <p>
+        El festivo de la Navidad existe ya que es el día que se celebra el
+        nacimiento de Jesús.
+      </p>
+      <img
+        src="https://www.ultimasnoticias.ec/files/article_main/uploads/2019/12/20/5dfcc52cf34a5.jpeg"
+        alt="Pesebre"
+      />
+      <li><b>¿Qué tradiciones hay en tu comunidad ese día?</b></li>
+      <p>
+        La celebración comienza desde la noche del 24 de dicimebre donde a nivel
+        religioso las familias asisten a la Eucaristía del
+        nacimiento(representativo) de Jesús. Posteriormente se reunen en alguna
+        casa en común para compartir una cena, hacer la novena del último día y
+        esperar a que sea la media noche para celebrar la Navidad. Junto con
+        esto, se reparten los regalos que trae el niño Dios para los niños.
+        Continúa el compartir bailando al ritmo de la música hasta que
+        aguanten(en ocasiones puede llegar el amanecer e incluso no dormir). Ese
+        25, dado que es festivo, la gente aprovecha para descansar, compartir en
+        familia en casa, incluso hasta se hacen asados o se sale a compartir el
+        almuerzo en restaurantes, etc.
+      </p>
+      <li><b>¿Qué haces tú ese día?</b></li>
+      <p>
+        Aprovecho la celebración de la Navidad para compartir en familia. Contar
+        anécdotas, historias que se han vivido hasta ese año y no puede faltar
+        la comida. Se entregan los regalos para los niños y no hay nada como
+        verlos sonreir y disfrutar esos regalos. De igual forma se comparte la
+        música bailando y trasnochando/amaneciendo con mi familia. El 25 se
+        comparte el almuerzo en familia y se pasa un día en descanso total.
+      </p>
+      <img
+        src="https://ichef.bbci.co.uk/news/800/cpsprodpb/3CA5/production/_122252551_gettyimages-1358783349.jpg.webp"
+        alt="Cena navideña"
+      />
+    </ul>
+  </div>
+  <a href="{% url 'index' %}">Regresar</a>
+</div>
+
+{% endblock %}

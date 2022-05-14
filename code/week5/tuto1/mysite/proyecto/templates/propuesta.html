@@ -1,0 +1,49 @@
+{% extends './base.html' %} 
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/page-style.css' %}">
+{% endblock %} 
+
+{% block title %}
+<title>Festivo Popuesto</title>
+{% endblock %} 
+
+{% block content %}
+<div class="card">
+  <h1>PROPUESTA DE FESTIVO</h1>
+  <h2>Día del deporte</h2>
+  <img src="https://www.periodicodigitalgratis.com/gratis/imagen/28057_0956112001572446024.jpg" alt="Collage Deportes">
+    <ul>
+      <li><b>¿Cuándo se celebraría?</b></li>
+      <p>El 6 de abril</p>
+      <li><b>¿Por qué existiría ese festivo?</b></li>
+      <p>
+        Este día corresponde con el Día Internacional de la Salud (Deporte
+        para el Desarrollo y la Paz) y que mejor forma de celebrarlo que con
+        un día festivo orientado a la actividad física, a salir de casa,
+        despegarse del computador, no ir a la empresa, entre otros.
+      </p>
+      <li><b>¿Qué tradiciones te gustaría que hubiera?</b></li>
+      <p>
+        Sería genial que la gente tomara conciencia de lo importante que es
+        la salud en nuestra vida y los beneficios que se obtienen al
+        ejercitarnos. No hay nada más genial que celebrar la vida (lo
+        hacemos cada que cumplimos años), por que no celebrar la razón de
+        que tengamos una salud sana.
+      </p>
+      <img src="https://www.suteba.org.ar/images/69764_(500X500).png" alt="Actividad física">
+      <li><b>¿Qué te gustaría hacer ese día?</b></li>
+      <p>
+        Propondría todo tipo de deportes a través de los parques (dado que
+        Bucaramanga es la ciudad de los parques) y de igual forma
+        aprovecharía al máximo las vías principales de la ciudad. Propondría
+        que no se permitan los vehículos particulares promoviendo medios
+        como la bicicleta o incluso la caminata.
+      </p>
+      <img src="https://www.aicad.es/asset/img/2/actividad-fsica-y-cognitiva-para-personas-mayores.jpg" alt="Personas ejercitandose">
+    </ul>
+  
+    <a href="{% url 'index' %}">Regresar</a>
+</div>
+{% endblock %}

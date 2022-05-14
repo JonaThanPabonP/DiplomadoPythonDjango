@@ -1,0 +1,24 @@
+{% extends './base.html' %} 
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock %} 
+
+{% block title %}
+<title>Festivos</title>
+{% endblock %} 
+
+{% block content %}
+<div class="card">
+  <h1>FESTIVOS</h1>
+  <p>Algunas actividades festivas en diferentes partes.</p>
+  <div class="listado">
+    <ul>
+      <li><a href="{% url 'colombia' %}">Festivo en Colombia</a></li>
+      <li><a href="{% url 'mundo' %}">Festivo en el Mundo</a></li>
+      <li><a href="{% url 'propuesta' %}">Festivo Propuesto</a></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

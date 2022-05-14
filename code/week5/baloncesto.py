@@ -1,4 +1,7 @@
+
+
 def menu():
+    print("--- MENU ---")
     print("1. Ingresar nuevo jugador.")
     print("2. Ingresar nuevo partido.")
     print("3. Ingresar datos de jugador en juego.")
@@ -7,34 +10,11 @@ def menu():
     print("0. Salir.")
 
 
-flag = True
-while flag:
-    menu()
-    opc = int(input("Ingrese la opción necesaria: "))
-    
-    if opc == 0:
-        flag = False
-
-    elif opc == 1:
-        nombre = input("Nombre: ")
-        edad = input("Edad: ")
-    
-    elif opc == 2:
-        fecha = input("Fecha: ")
-        ubicacion = input("Lugar: ")
-        
-    elif opc == 3:
-        id_jugador = input("ID del jugador: ")
-        id_partido = input("ID del partido: ")
-        puntos_partido = input("Puntos partido: ")
-        faltas_partido = input("Faltas partido: ")
-
-
 class Jugador:
     """
     this class jugador
     """
-    def __init__(self, id, name, age) -> None:
+    def __init__(self, id, name, age):
         self.id = id
         self.name = name
         self.age = age
@@ -47,7 +27,7 @@ class Partido:
     """
     this class partido
     """
-    def __init__(self, id, date, location) -> None:
+    def __init__(self, id, date, location):
         self.id = id
         self.date = date
         self.location = location
@@ -75,3 +55,65 @@ class JugadorPartido:
     def get_points_by_game(points):
         points_by_game = None
         return points_by_game
+
+
+jugadores = []
+partidos = []
+resultados = []
+
+def inicio():
+    flag = True
+    while flag:
+        menu()
+        opc = int(input("Ingrese la opción necesaria: "))
+        
+        if opc == 0:
+            print("Hasta luego!")
+            flag = False
+
+        elif opc == 1:
+            id_jug = input("ID: ")
+            nombre = input("Nombre: ")
+            edad = input("Edad: ")
+            jug = Jugador(id_jug,nombre,edad)
+            jugadores.append({"id": jug.id, "nombre": jug.name, "edad": jug.age})
+        
+        elif opc == 2:
+            id_part = input("ID partido: ")
+            fecha = input("Fecha: ")
+            ubicacion = input("Lugar: ")
+            part = Partido(id_part,fecha,ubicacion)
+            partidos.append({"id": part.id, "fecha": part.date, "ubicacion": part.location})
+            
+        elif opc == 3:
+            id_jugador = input("ID del jugador: ")
+            id_partido = input("ID del partido: ")
+            puntos_partido = input("Puntos partido: ")
+            faltas_partido = input("Faltas partido: ")
+            jugpart = JugadorPartido(id_jugador, id_partido, puntos_partido, faltas_partido)
+            
+            if resultados == []:
+                resultados.append({jugpart.player : [{"partido":jugpart.game, "puntos":jugpart.points, "faltas":jugpart.faults}]})
+            else:
+                for i in resultados:
+                    if jugpart.player == i[jugpart.player]:
+                        print(i, i[jugpart.player])
+
+            
+           
+        elif opc == 4:
+            if resultados == []:
+                print("No hay registros.")
+            else: 
+                for jug in resultados:
+                    print(jug)
+
+
+        elif opc == 5:
+            if jugadores == []:
+                print("No hay registros.")
+            else:
+                for jugador in jugadores:
+                    print(jugador)
+
+inicio()

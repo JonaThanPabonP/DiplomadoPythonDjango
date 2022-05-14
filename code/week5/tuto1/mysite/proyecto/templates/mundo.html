@@ -1,0 +1,69 @@
+{% extends './base.html' %} 
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/page-style.css' %}" />
+{% endblock %} 
+
+{% block title %}
+<title>Festivo en el Mundo</title>
+{% endblock %} 
+
+{% block content %}
+<div class="card">
+  <h1>FESTIVO EN EL MUNDO</h1>
+  <h2>CANADA DAY</h2>
+  <div class="info-canada">
+    <a
+      href="https://www.canada.ca/en/canadian-heritage/campaigns/canada-day.html"
+      ><i class="fa-solid fa-arrow-up-right-from-square"></i
+    ></a>
+  </div>
+  <img
+    src="https://www.canada.ca/content/dam/pch/images/campaigns/canada-day/2021/festive-atmosphere-992x661.jpg"
+    alt="canada day"
+  />
+  <div class="">
+    <ul>
+      <li><b>¿En qué parte del mundo se celebra?</b></li>
+      <p>Canadá</p>
+      <li><b>¿Cuándo se celebra?</b></li>
+      <p><i class="fa-solid fa-calendar-days"></i>01 de julio</p>
+
+      <li><b>¿Por qué existe ese festivo?</b></li>
+      <p>
+        En 1867 Canadá decide volverse autónoma y dejar de formar parte del
+        Imperio Británico (Reino Unido) por lo que inicialmente se dio a
+        conocer como el Día del Dominio(Independencia). En 1982 pasó a ser
+        el Día de Canadá.
+      </p>
+      <img
+        src="https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photo/12972716/image/d18c13b11fc1f45a9d346f0a888e564d"
+        alt="independencia canadá"
+      />
+      <li><b>¿Qué tradiciones hay en esa comunidad ese día?</b></li>
+      <p>
+        Se celebra con desfiles y fistas que se llevan a cabo al aire libre.
+        Las principales celebraciones se hacen en la ciudad de Ottawa más
+        centrado en la Colina Parlamentaria donde participan divensas
+        figuras importantes como ministros y gobernadores. En esta ciudad se
+        hace un desfile aéreo a cargo de la Fuerza Armada Canadiense. Para
+        finalizar el día, se televisa un musical. Tambien hay más ciudades
+        como Montreal y Quebec con diversas actividades.
+      </p>
+      <img
+        src="https://images.rove.me/w_740,q_85/hfuzcrpuzhfpofuulio0/toronto-canada-day.jpg"
+        alt="espectáculo aéreo"
+      />
+      <li><b>¿Qué te gustaría hacer ese día?</b></li>
+      <p>
+        Participar de los desfiles que se hacen e incluso estar en
+        conciertos, barcoas y ver el evento aéreo. Cada país tiene una
+        cultura y me gustaría ser participe de las actividades que muestran
+        la cultura Canadiense.
+      </p>
+    </ul>
+  </div>
+  <a href="{% url 'index' %}">Regresar</a>
+</div>
+{% endblock %}
