@@ -21,4 +21,3 @@ class Cita_medica(models.Model):
     fecha = models.DateField(null=True)
     paciente_id = models.ForeignKey('Paciente', on_delete=models.CASCADE)
     doctor_id = models.ForeignKey('Doctor', on_delete=models.CASCADE)
-    diagnostico = models.CharField(max_length=1000)
