@@ -8,12 +8,22 @@ class Paciente(models.Model):
     apellido = models.CharField(max_length=100)
     fecha_de_nacimiento = models.DateField()
 
+    def __str__(self) -> str:
+        return f"{self.nombre} {self.apellido}"
+
+    def getName(self) -> str:
+        return f"{self.nombre} {self.apellido}"
 
 class Doctor(models.Model):
     uniqueId = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
+
+    def __str__(self) -> str:
+        return f"{self.nombre} {self.apellido}"
     
+    def getName(self) -> str:
+        return f"{self.nombre} {self.apellido}"
 
 class Cita_medica(models.Model):
     uniqueId = models.AutoField(primary_key=True)
@@ -21,3 +31,6 @@ class Cita_medica(models.Model):
     fecha = models.DateField(null=True)
     paciente_id = models.ForeignKey('Paciente', on_delete=models.CASCADE)
     doctor_id = models.ForeignKey('Doctor', on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return f"{self.fecha} - {Paciente.getName} - {Doctor.getName}"

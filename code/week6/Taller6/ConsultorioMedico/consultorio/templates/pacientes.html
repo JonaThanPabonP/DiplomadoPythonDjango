@@ -1,0 +1,17 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Pacientes</title>
+{% endblock %}
+
+{% block titulo %}
+Pacientes
+{% endblock %}
+
+{% block lead %}
+<p class="lead">
+    {{ lista_pacientes }}
+</p>
+<p> Total pacientes: {{ numero_pacientes }} </p>
+{% endblock %}

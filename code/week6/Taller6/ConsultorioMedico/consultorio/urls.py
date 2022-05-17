@@ -1,9 +1,13 @@
 from django.contrib import admin
 from django.urls import path
-from django.views.generic import TemplateView
+from consultorio import views
+
 
 urlpatterns = [
 
-    path('', TemplateView.as_view(template_name = "home.html"), name="home"),
+    path('', views.home, name='home'),
+    path('pacientes', views.pacientes, name='pacientes'),
+    path('medicos', views.medicos, name='medicos'),
+    path('citas', views.citas, name='citas'),
     
 ]

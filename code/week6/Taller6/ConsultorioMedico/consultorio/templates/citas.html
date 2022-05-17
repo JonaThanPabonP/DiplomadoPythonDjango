@@ -1,0 +1,18 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Citas</title>
+{% endblock %}
+
+{% block titulo %}
+Citas médicas
+{% endblock %}
+
+{% block lead %}
+<p class="lead">
+    {{ lista_citas }}
+</p>
+<p> Total citas: {{ numero_citas }} </p>
+{% endblock %}
+
