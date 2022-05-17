@@ -5,7 +5,7 @@ class Deportista(models.Model):
     uniqueId = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
-    fecha_de_nacimiento = models.DateField(default="")
+    fecha_de_nacimiento = models.DateField(null=True)
 
 
 class Deporte(models.Model):
@@ -15,7 +15,7 @@ class Deporte(models.Model):
 
 class Inscripcion(models.Model):
     uniqueId = models.AutoField(primary_key=True)
-    horas_practicar = models.PositiveIntegerField
+    horas_practicar = models.PositiveIntegerField(null=True)
     sitio_entrenamiento = models.CharField(max_length=500)
     deportista_id = models.ForeignKey('Deportista', on_delete=models.CASCADE)
     deporte_id = models.ForeignKey('Deporte', on_delete=models.CASCADE)
