@@ -1,3 +1,6 @@
 # Ignorar entorno virtual
 code/week5/tuto1/myvenv
 code/week6/Taller6/env
+*.sqlite3
+# code/week6/Taller6/ConsultorioMedico/db.sqlite3
+/code/week6/Taller6/ConsultorioMedico/.idea
