@@ -10,9 +10,16 @@ Citas médicas
 {% endblock %}
 
 {% block lead %}
-<p class="lead">
-    {{ lista_citas }}
-</p>
+<ul>
+    {% for cita in lista_citas %}
+        <li>
+            {{ cita }}
+        </li>
+    {% endfor %}
+    </ul>
 <p> Total citas: {{ numero_citas }} </p>
+<p class="lead">
+    <a href="#" class="btn btn-lg btn-secondary">Agendar cita</a>
+</p>
 {% endblock %}
 

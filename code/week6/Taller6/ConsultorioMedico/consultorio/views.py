@@ -25,6 +25,17 @@ def citas(request):
     return render(request, 'citas.html', context)
 
 def medicos(request):
+
+    if request.method == 'POST':
+        info = request.POST
+        fname = info.get('fname')
+        lname = info.get('lname')
+
+        med = Doctor()
+        med.nombre = fname
+        med.apellido = lname
+        med.save()
+
     d = Doctor.objects.all()
 
     context = {

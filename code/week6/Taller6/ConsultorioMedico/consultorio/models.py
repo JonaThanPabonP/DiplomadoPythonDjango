@@ -9,7 +9,7 @@ class Paciente(models.Model):
     fecha_de_nacimiento = models.DateField()
 
     def __str__(self) -> str:
-        return f"{self.nombre} {self.apellido}"
+        return f"{self.nombre} {self.apellido} -- ({self.fecha_de_nacimiento})"
 
     def getName(self) -> str:
         return f"{self.nombre} {self.apellido}"
@@ -33,4 +33,4 @@ class Cita_medica(models.Model):
     doctor_id = models.ForeignKey('Doctor', on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return f"{self.fecha} - {Paciente.getName} - {Doctor.getName}"
+        return f"{self.fecha} - {self.paciente_id.getName()} - {self.doctor_id.getName()}"

@@ -1,17 +1,46 @@
-{% extends './base.html' %}
-{% load static %}
-
-{% block title %}
+{% extends './base.html' %} {% load static %} {% block title %}
 <title>Médicos</title>
-{% endblock %}
+{% endblock %} {% block titulo %} Médicos {% endblock %} {% block lead %}
+<ul>
+  {% for medico in lista_medicos %}
+  <li>{{ medico }}</li>
+  {% endfor %}
+</ul>
+<p>Total médicos: {{ numero_medicos }}</p>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+  Agregar médico
+</button>
 
-{% block titulo %}
-Médicos
-{% endblock %}
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
-{% block lead %}
-<p class="lead">
-    {{ lista_medicos }}
-</p>
-<p> Total medicos: {{ numero_medicos }} </p>
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Agregar Médico</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <form action={% url 'consultorio:medicos' %} method="POST">
+          {% csrf_token %}
+        <div class="modal-body">
+            <label for="fname">Nombre:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Apellido:</label><br>
+            <input type="text" id="lname" name="lname"><br>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            <input type="submit" value="Crear" class="btn btn-success" id="submit">
+        </div>
+    </form>
+
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
