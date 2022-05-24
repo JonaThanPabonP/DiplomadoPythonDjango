@@ -38,7 +38,8 @@ def facturacion(request, id):
         "nombre": deportista.nombre,
         "horas": numero_horas,
         "plan_del_deportista": plan_del_deportista,
-        "pago": pago
+        "pago": pago,
+        "deportista_usages": deportista_usages
     }
 
     return render(request, 'facturacion.html', context=context)

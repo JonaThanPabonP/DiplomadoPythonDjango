@@ -10,4 +10,8 @@ evento
 
     <p>Valor a pagar este mes: {{ pago }}</p>
 
+    {% for du in deportista_usages %}
+        {{ du }} <br>
+    {% endfor %}
+
 {% endblock %}
