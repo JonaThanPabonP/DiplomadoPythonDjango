@@ -7,15 +7,24 @@ class Deportista(models.Model):
     apellido = models.CharField(max_length=100)
     fecha_de_nacimiento = models.DateField(null=True)
 
+    def __str__(self):
+        return "{} {}".format(self.nombre, self.apellido)
 
-class Deporte(models.Model):
+
+class PlanesDeportivos(models.Model):
     uniqueId = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
-    
+    max_horas = models.PositiveIntegerField(null=True)
+    min_horas = models.PositiveIntegerField(null=True)
+    valor_facturacion = models.PositiveIntegerField(null=True)
 
-class Inscripcion(models.Model):
-    uniqueId = models.AutoField(primary_key=True)
-    horas_practicar = models.PositiveIntegerField(null=True)
-    sitio_entrenamiento = models.CharField(max_length=500)
-    deportista_id = models.ForeignKey('Deportista', on_delete=models.CASCADE)
-    deporte_id = models.ForeignKey('Deporte', on_delete=models.CASCADE)
+    def __str__(self):
+        return "{}: {}".format(self.nombre, self.valor_facturacion)
+
+class DeportistaUsage(models.Model):
+    deportista = models.ForeignKey("Deportista", on_delete=models.CASCADE)
+    hora_ingreso = models.DateTimeField()
+    hora_salida = models.DateTimeField()
+
+    def __str__(self):
+        return "{}: {} - {}".format(self.deportista, self.hora_ingreso.strftime("%Y-%m-%d %H:%M:%S"), self.hora_salida.strftime("%Y-%m-%d %H:%M:%S"))
