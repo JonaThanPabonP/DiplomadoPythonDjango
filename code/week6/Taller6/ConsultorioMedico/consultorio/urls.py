@@ -10,4 +10,6 @@ urlpatterns = [
     path('medicos', TemplateView.as_view(template_name="medicos.html"), name="medicos"),
     path('especialidades', TemplateView.as_view(template_name="especialidades.html"), name="especialidades"),
     path('citas', views.numero_de_citas, name="numero_citas"),
+    path('lista_doctores', views.get_doctores_list, name="lista-doctores"),
+    path('lista_pacientes', views.PacienteListView.as_view(), name="lista-pacientes"),
 ]
