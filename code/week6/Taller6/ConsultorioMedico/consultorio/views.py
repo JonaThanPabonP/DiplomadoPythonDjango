@@ -1,5 +1,9 @@
 from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.urls import reverse_lazy
 from django.shortcuts import render
+
 from .models import Cita_medica, Doctor, Paciente
 
 # Create your views here.
@@ -26,3 +30,22 @@ class PacienteListView(ListView):
     model = Paciente
     context_object_name = 'paciente_list'
     template_name = 'paciente_list.html'
+
+
+class PacienteDetailView(DetailView):
+    model = Paciente
+
+class PacienteCreateView(CreateView):
+    model = Paciente
+    fields = ['nombre']
+
+class PacienteUpdateView(UpdateView):
+    model = Paciente
+    fields = ['nombre']
+
+class PacienteDeleteView(DeleteView):
+    model = Paciente
+    success_url = reverse_lazy('consultorio:lista-pacientes')
+
+    def get(self, request, *args, **kwargs):
+        return self.post(request, *args, **kwargs)

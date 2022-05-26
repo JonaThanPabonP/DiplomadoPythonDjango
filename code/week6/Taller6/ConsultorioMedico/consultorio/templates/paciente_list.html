@@ -1,17 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends './base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Paciente</title>
+{% endblock %}
+
+{% block titulo %}
+  Informacion de los pacientes
+
+{% endblock %}
+
+
+{% block lead %}
 
 <h1>
     lista de paciente:
 </h1>
 {% for paciente in paciente_list %}
-    {{ paciente.nombre }} -- {{ paciente.apellido }} <br>
+    <a href="{% url 'consultorio:detalle-paciente'  paciente.uniqueId %}">
+        {{ paciente.nombre }} -- {{ paciente.apellido }}
+    </a><br>
 {% endfor %}
 
-</body>
-</html>
+{% endblock %}
+

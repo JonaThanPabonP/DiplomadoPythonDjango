@@ -20,7 +20,7 @@
             <h3 class="masthead-brand">Consultorio Médico</h3>
             <nav class="nav nav-masthead justify-content-center">
               <a class="nav-link active" href="{% url 'consultorio:home' %}">Home</a>
-              <a class="nav-link" href="{% url 'consultorio:pacientes' %}">Pacientes</a>
+              <a class="nav-link" href="{% url 'consultorio:lista-pacientes' %}">Pacientes</a>
               <a class="nav-link" href="{% url 'consultorio:medicos' %}">Médicos</a>
               <a class="nav-link" href="{% url 'consultorio:especialidades' %}">especialidad</a>
             </nav>
@@ -39,7 +39,8 @@
                   {% endblock %}
 
           <p class="lead">
-
+            {% block actions %}
+            {% endblock %}
             <a href="#" class="btn btn-lg btn-secondary">Agendar cita</a>
           </p>
         </main>
