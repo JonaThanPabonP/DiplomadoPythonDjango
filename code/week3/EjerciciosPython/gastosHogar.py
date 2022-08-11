@@ -15,6 +15,7 @@ total = agua + luz + ....
 si en mi casa viven n personas, 
 cuanto es el gasto por cada uno?
 (usar input para ingresar los valores)
+test
 '''
 
 agua = int(input('Ingrese el valor del recibo del agua: '))
